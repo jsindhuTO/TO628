@@ -3,10 +3,12 @@ title: "Homework Assignment 1"
 author: "Jatin Sindhu"
 date: 'Assigned: Oct 24, 2020, Due Sun Nov 01, 2020 11:59PM'
 output:
-  html_document: default
+  html_document: 
+    code_folding: hide
+    toc: true
+    toc_float: true 
   pdf_document: default
-  code_folding: hide
-  toc: true
+  
 ---
 
 ## HW-1 Instructions
