@@ -107,6 +107,7 @@ median(flightsJan$arr_delay, na.rm = TRUE)
 
 Based on your answers to the two questions above, what can you say about the distribution of arrival delays? Provide your answer in a text paragraph form.
 
+The median is negative but the average is positive. So there are a few flights with significant delays but a majority of the flights reach before time. The high delay times is what is getting the average to be positive. 
 
 ### Airline Performance
 
@@ -115,6 +116,7 @@ Lets see if all airlines are equally terrible as far as flight arrival delays ar
 - Calculate average arrival delays by airline (Hint: look up the command `tapply`)
 ```{r}
 avgDelay <- tapply(nyc$arr_delay, nyc$carrier, mean, na.rm = TRUE)
+avgDelay
 ```
 
 
@@ -138,22 +140,31 @@ nyc$airgain <- nyc$dep_delay - nyc$arr_delay
 
 
 a) Explore airgain data - calculate suitable descriptive statistics and appropriate graphics to better understand this data. This part is open ended - you do what you feel works best for you.
+
+Mean: `r mean(nyc$airgain, na.rm = TRUE) `
+
+Median: `r median(nyc$airgain, na.rm = TRUE)`
+
+Airgain By Carrier
 ```{r}
-mean(nyc$airgain, na.rm = TRUE)
-median(nyc$airgain, na.rm = TRUE)
 tapply(nyc$airgain, nyc$carrier, mean, na.rm = TRUE)
-barplot(nyc$airgain)
 barplot(tapply(nyc$airgain, nyc$carrier, mean, na.rm = TRUE))
+```
+
+Airgain Bar Plot:
+```{r}
+barplot(nyc$airgain)
 ```
 
 
 b) Answer the questions:
 
   - do airlines actually gain any time when in air on average? 
-  - Yes, based on the mean calculated above we can say that on average airlines do gain time in air.
+  -     Yes, based on the mean calculated above we can say that on average airlines do gain time in air.
+
 
   - Calculate average airgain for different airlines - which airlines do a better job, which do a worse job? 
-  - Based on the barplot of airlines above, we can see that AS does the best job while F9 does the worst job.
+  -     Based on the barplot of airlines above, we can see that AS does the best job while F9 does the worst job.
 
 ### Merging Data Frames
 
